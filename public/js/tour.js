@@ -41,7 +41,7 @@ const TOUR_STEPS = [
   {
     eyebrow: '// KELEX',
     title:   'Ask the corpus.',
-    body:    'Kelex is the sceptre at the far right of the network. It opens a live retrieval-augmented chat — it answers questions about Anjaneya by pulling from his biography, resume, and project notes. Try <em>"What did you build at Globant X?"</em>',
+    body:    'Kelex is the sceptre at the far right of the network. It opens a live retrieval-augmented chat — it answers questions about Anjaneya by pulling from his biography, resume, and project notes. Try <em>"What did you build at Globant?"</em>',
     target:  '#panel',
     position: 'left',
     onEnter: () => {

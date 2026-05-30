@@ -82,7 +82,7 @@
   ],
 
   "cv": [
-    {"when":"JAN 2026 — MAY 2026", "role":"AI Engineer · Team Lead", "org":"Globant X · University at Buffalo",
+    {"when":"JAN 2026 — MAY 2026", "role":"AI Engineer · Team Lead", "org":"Globant · University at Buffalo",
      "body":"Engineered an end-to-end AI procurement optimization system for a Mexican fuel-station network operating 617 stations with a ~$189B MXN ($9.5B USD) annual baseline, targeting 5–15% cost reduction. Designed a multi-agent system (1 orchestrator, 7 tools, 3 parallel web-search sub-agents) cutting risk-assessment latency 57% (210s→90s) on LangChain + LangGraph. Built a 4-stage ingestion pipeline over 7,251 supplier files across PDF/HTML/XLSX/TXT, a 0–100 Leakage Score over 252,117 historical orders, and a MILP order-splitting optimizer. Shipped a production Streamlit dashboard with a bilingual conversational procurement agent. Coordinated a team of 3."},
     {"when":"JUN 2023 — JUL 2023", "role":"Data Science Intern", "org":"ECHO India",
      "body":"Collaborated with senior data scientists to collect, clean, and preprocess datasets from diverse sources using Python and pandas. Created visualizations of user-behavior trends for stakeholders. Built a VADER-based sentiment analyzer that automatically classified user feedback for the product team."},
