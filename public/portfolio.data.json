@@ -1,0 +1,115 @@
+{
+  "layers": [
+    {"id":"INPUT_01",  "label":"INPUT",    "count":1,  "anchor":{"i":0, "key":"bio",      "name":"BIOGRAPHY"}},
+    {"id":"HIDDEN_02", "label":"SKILLS",   "count":13, "anchor":{"i":6, "key":"skills",   "name":"SKILLS"},
+      "named":[
+        {"i":1,  "key":"pytorch",    "label":"PYTORCH"},
+        {"i":3,  "key":"langgraph",  "label":"LANGGRAPH"},
+        {"i":5,  "key":"gnn",        "label":"GNN"},
+        {"i":8,  "key":"postgres",   "label":"POSTGRES"},
+        {"i":10, "key":"docker",     "label":"DOCKER"},
+        {"i":11, "key":"rl",         "label":"RL"}
+      ]},
+    {"id":"HIDDEN_03", "label":"PROJECTS", "count":13, "anchor":{"i":6, "key":"projects", "name":"PROJECTS"},
+      "named":[
+        {"i":1,  "key":"procurement","label":"PROCUREMENT"},
+        {"i":3,  "key":"marl",       "label":"MARL_NIDS"},
+        {"i":5,  "key":"sepsis",     "label":"SEPSIS_DDPM"},
+        {"i":8,  "key":"warehouse",  "label":"HEALTH_DW"},
+        {"i":10, "key":"deafine",    "label":"DEAFINE"},
+        {"i":12, "key":"genre",      "label":"GENRE_FUSION"}
+      ]},
+    {"id":"HIDDEN_04", "label":"HIDDEN",   "count":11, "anchor":{"i":5, "key":"cv",       "name":"CV"}},
+    {"id":"HIDDEN_05", "label":"CONTACT",  "count":5,  "anchor":{"i":2, "key":"contact",  "name":"CONTACT"}},
+    {"id":"OUTPUT_06", "label":"OUTPUT",   "count":1,  "anchor":{"i":0, "key":"rag",      "name":"KELEX"}}
+  ],
+
+  "projectSkills": {
+    "procurement": ["langgraph","postgres","docker"],
+    "marl":        ["pytorch","gnn","rl"],
+    "sepsis":      ["pytorch"],
+    "warehouse":   ["postgres","docker"],
+    "deafine":     [],
+    "genre":       ["pytorch"]
+  },
+
+  "anchorHeader": {
+    "bio":      "[INPUT_01] BIOGRAPHY",
+    "skills":   "[HIDDEN_02] SKILLS",
+    "projects": "[HIDDEN_03] PROJECTS",
+    "cv":       "[HIDDEN_04] CV",
+    "contact":  "[HIDDEN_05] CONTACT",
+    "rag":      "[OUTPUT_06] KELEX"
+  },
+
+  "asides": {
+    "skills":   { "id":"EPI_01", "title":"ON LEARNING",  "quote":"Once you stop learning, you start dying.", "attribution":"— Albert Einstein" },
+    "projects": { "id":"EPI_02", "title":"ON CURIOSITY", "quote":"Stay hungry, stay foolish.",                "attribution":"— Steve Jobs, Stanford Commencement, 2005" }
+  },
+
+  "skillLabel": {
+    "pytorch":"PYTORCH", "langgraph":"LANGGRAPH", "gnn":"GNN",
+    "postgres":"POSTGRES", "docker":"DOCKER", "rl":"RL"
+  },
+
+  "projects": [
+    { "id":"PRJ_01", "key":"procurement", "name":"Procurement Multi-Agent", "tag":"globant x · langgraph · milp",
+      "body":"End-to-end AI procurement optimization for a Mexican fuel-station network of 617 stations (~$9.5B USD baseline). Orchestrator with 7 local tools + 3 parallel web-search sub-agents cut risk assessment latency 57% (210s→90s). Shipped a bilingual Streamlit dashboard with KPI strip, supplier mix, and conversational agent.",
+      "tags":["LANGCHAIN","LANGGRAPH","MILP","STREAMLIT"] },
+    { "id":"PRJ_02", "key":"marl", "name":"MARL for Network Intrusion Detection", "tag":"multi-agent rl · gnn · ppo",
+      "body":"AI-driven cybersecurity defense system using Multi-Agent Reinforcement Learning to protect critical network assets under resource constraints. Enterprise networks modeled as graphs via GNNs to make agents topology-aware. 47% improvement over baseline using PPO.",
+      "tags":["MARL","GNN","PPO","SECURITY"] },
+    { "id":"PRJ_03", "key":"sepsis", "name":"Sepsis Detection via Diffusion", "tag":"ddpm · pytorch · medical ts",
+      "body":"Conditional Denoising Diffusion Probabilistic Model for medical time-series. Treats vital-sign forecasting as a generative re-painting task to visualize outcome distributions — a cloud of outcomes instead of one LSTM point estimate. 1D ResNet w/ sinusoidal time-step embeddings.",
+      "tags":["DDPM","PYTORCH","HEALTHCARE"] },
+    { "id":"PRJ_04", "key":"warehouse", "name":"Healthcare Data Warehouse", "tag":"postgres · dbt · docker",
+      "body":"Normalized PostgreSQL schema (3NF) + Star Schema warehouse for hospital revenue and patient workload analytics. Automated dbt pipeline engineering Fact/Dimension tables. Full stack containerized. Indexing cut query time 616ms→53ms (~90%).",
+      "tags":["POSTGRES","DBT","DOCKER","ETL"] },
+    { "id":"PRJ_05", "key":"deafine", "name":"Deafine", "tag":"accessibility · elevenlabs · websockets",
+      "body":"Python accessibility tool delivering real-time speaker detection and live transcription via the ElevenLabs STT API for deaf and hard-of-hearing users. WebSocket audio with batched calls during silence. Won Best Use of ElevenLabs at the MLH-UB Hackathon.",
+      "tags":["ELEVENLABS","WEBSOCKETS","A11Y","AWARD"] },
+    { "id":"PRJ_06", "key":"genre", "name":"Multi-Modal Genre Prediction", "tag":"lstm + mlp fusion",
+      "body":"Fusion model combining LSTM-encoded plot summaries and MLP-encoded poster images to classify movie genre across 100,000+ films. Custom augmentation + undersampling to handle class imbalance across six genres. 72% accuracy on the integrated multi-modal system.",
+      "tags":["LSTM","VISION","FUSION"] }
+  ],
+
+  "skillGroups": [
+    {"head":"AI / ML",          "items":[["PyTorch",92,"pytorch"],["TensorFlow",82],["Reinforcement Learning",88,"rl"],["Diffusion Models",85],["Graph Neural Networks",82,"gnn"],["Deep Learning",90],["Computer Vision",80],["NLP",82]]},
+    {"head":"AGENTIC / LLM",    "items":[["LangChain",90],["LangGraph",88,"langgraph"],["LangSmith",78],["Multi-Agent Orchestration",88],["RAG",86],["Prompt Engineering",85],["AI Agents",88]]},
+    {"head":"LANGUAGES & DATA", "items":[["Python",95],["C++",72],["PostgreSQL",82,"postgres"],["Pandas",92],["Scikit-Learn",88],["dbt",74],["Spark",68]]},
+    {"head":"INFRASTRUCTURE",   "items":[["Docker / Compose",86,"docker"],["Kubernetes",72],["FastAPI / REST",82],["Git",90],["ETL Pipelines",82],["Streamlit",88]]},
+    {"head":"ANALYTICAL",       "items":[["Statistical Modeling",82],["Multi-Criteria Decision (AHP/TOPSIS)",86],["Data Visualization (Plotly/Seaborn)",85],["Performance Tuning",82],["Data Mining",80]]}
+  ],
+
+  "cv": [
+    {"when":"JAN 2026 — MAY 2026", "role":"AI Engineer · Team Lead", "org":"Globant X · University at Buffalo",
+     "body":"Engineered an end-to-end AI procurement optimization system for a Mexican fuel-station network operating 617 stations with a ~$189B MXN ($9.5B USD) annual baseline, targeting 5–15% cost reduction. Designed a multi-agent system (1 orchestrator, 7 tools, 3 parallel web-search sub-agents) cutting risk-assessment latency 57% (210s→90s) on LangChain + LangGraph. Built a 4-stage ingestion pipeline over 7,251 supplier files across PDF/HTML/XLSX/TXT, a 0–100 Leakage Score over 252,117 historical orders, and a MILP order-splitting optimizer. Shipped a production Streamlit dashboard with a bilingual conversational procurement agent. Coordinated a team of 3."},
+    {"when":"JUN 2023 — JUL 2023", "role":"Data Science Intern", "org":"ECHO India",
+     "body":"Collaborated with senior data scientists to collect, clean, and preprocess datasets from diverse sources using Python and pandas. Created visualizations of user-behavior trends for stakeholders. Built a VADER-based sentiment analyzer that automatically classified user feedback for the product team."},
+    {"when":"2025 — 2026", "role":"MS, Artificial Intelligence", "org":"University at Buffalo, SUNY",
+     "body":"Developed expertise in Generative Diffusion Models, Reinforcement Learning, and neural network design. Led collaborative teams to build and optimize predictive models, manage high-performance data workflows, and scale neural architectures. Coursework: Data Intensive Computing, Numerical Methods for Data Science, Reinforcement Learning, Computer Vision, Pattern Recognition, Basics of AI, Intro to ML."},
+    {"when":"2020 — 2024", "role":"B.Tech, Information Technology", "org":"Jaypee Institute of Information Technology (JIIT)",
+     "body":"Developed skills in problem solving, leadership, time management, product planning, solution delivery, and cross-team collaboration over four years of engineering. Coursework: Data Mining, Web Algorithms, Information Retrieval, Machine Learning, Big Data, Financial Accounting, Operations Research."}
+  ],
+
+  "cvFooter": {
+    "certifications": "Supervised ML: Regression & Classification — Stanford / DeepLearning.AI (Nov 2024). Affective Computing — NPTEL / IIIT-D (May 2024).",
+    "leadership":     "Admissions Head, Light De Literacy NGO (2020–2024). Team Lead, Progno.AI Startup Initiative (2023) — platform for early detection of lifestyle diseases.",
+    "awards":         "Best Use of ElevenLabs — MLH-UB Hackathon, for the <em>Deafine</em> real-time accessibility tool."
+  },
+
+  "contact": {
+    "left":  [
+      {"k":"EMAIL",    "v":"anjaneya2002@gmail.com"},
+      {"k":"PHONE",    "v":"+1 716 520 7918"},
+      {"k":"GITHUB",   "v":"github.com/anjaneya2002"},
+      {"k":"LINKEDIN", "v":"linkedin.com/in/anjaneya-bhardwaj"}
+    ],
+    "right": [
+      {"k":"LOCATION",     "v":"Buffalo, New York, USA"},
+      {"k":"TIMEZONE",     "v":"ET · UTC-05"},
+      {"k":"AVAILABILITY", "v":"Open to AI/ML engineering & research roles (Summer 2026 / Full-time post-grad)."},
+      {"k":"FOCUS_AREAS",  "v":"Agentic AI · RL · Diffusion · Applied DL"}
+    ]
+  }
+}

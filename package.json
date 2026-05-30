@@ -1,0 +1,11 @@
+{
+  "name": "neural-portfolio",
+  "version": "0.4.2",
+  "description": "Anjaneya Bhardwaj — Neural Network Portfolio",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}

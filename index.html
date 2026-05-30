@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>NEURAL_PORTFOLIO // ANJANEYA_BHARDWAJ</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IM+Fell+English:ital@0;1&family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+<canvas id="net"></canvas>
+
+<!-- corner frame brackets -->
+<div class="frame-corner tl"></div>
+<div class="frame-corner tr"></div>
+<div class="frame-corner bl"></div>
+<div class="frame-corner br"></div>
+
+<!-- Tour overlay -->
+<div id="tour-overlay" class="tour-overlay" hidden>
+  <div class="tour-dim tour-dim-top" id="tour-dim-top"></div>
+  <div class="tour-dim tour-dim-right" id="tour-dim-right"></div>
+  <div class="tour-dim tour-dim-bottom" id="tour-dim-bottom"></div>
+  <div class="tour-dim tour-dim-left" id="tour-dim-left"></div>
+  <div class="tour-spotlight" id="tour-spotlight"></div>
+  <div class="tour-card" id="tour-card" role="dialog" aria-live="polite">
+    <div class="tour-card-head">
+      <span class="tour-progress" id="tour-progress">01 / 06</span>
+      <button class="tour-skip" id="tour-skip">SKIP ✕</button>
+    </div>
+    <div class="tour-card-body">
+      <div class="tour-eyebrow" id="tour-eyebrow">// WALKTHROUGH</div>
+      <h3 id="tour-title">Welcome</h3>
+      <p id="tour-body">Body text.</p>
+    </div>
+    <div class="tour-card-foot">
+      <button id="tour-back" class="tour-btn">← BACK</button>
+      <button id="tour-next" class="tour-btn primary">NEXT →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Replay the tour at any time -->
+<button id="tour-launch" class="tour-launch" title="Replay walkthrough">TOUR [?]</button>
+
+<!-- HUDs -->
+<div class="hud tl">
+  <div>NEURAL_PORTFOLIO &nbsp;//&nbsp; v0.4.1</div>
+  <div class="tick">ANJANEYA_BHARDWAJ &nbsp;·&nbsp; AI/ML_ENGINEER</div>
+  <div class="tick">STATUS: <span class="blink">▮</span> LIVE</div>
+</div>
+
+<div class="hud tr">
+  <div id="utc">UTC 00:00:00</div>
+  <div class="tick" id="date">0000-00-00</div>
+  <div class="tick">LAT 42.8864 · LON -78.8784 · BUFFALO_NY</div>
+</div>
+
+<div class="hud bl">
+  <div class="row"><span>FPS <b id="fps">--</b></span><span>NODES <b id="ncount">0</b></span><span>EDGES <b id="ecount">0</b></span></div>
+  <div class="row"><span>VISITED <b id="visited">0/6</b></span><span>LAST <b id="last">—</b></span></div>
+  <div class="row tick"><span>PAN: DRAG</span><span>ZOOM: SCROLL</span><span>RESET: [R]</span></div>
+</div>
+
+<div class="hud br">
+  <div>LAYERS [INPUT_01] → [HIDDEN_02..05] → [OUTPUT_06]</div>
+  <div class="tick">CLICK ANCHOR · OR ANY NAMED NODE</div>
+</div>
+
+<div class="tooltip" id="tt"></div>
+
+<div class="tweaks" id="tweaks">
+  <div class="tweaks-head">
+    <span>CONSOLE · NEURAL_CTL</span>
+    <button id="tweaks-close">CLOSE ✕</button>
+  </div>
+  <div class="tweaks-body">
+    <div class="tweak-group">
+      <div class="tweak-key">THEME · SURFACE_POLARITY</div>
+      <div class="tweak-radio" data-key="theme">
+        <button data-val="dark">DARK</button>
+        <button data-val="light">LIGHT</button>
+      </div>
+      <div class="tweak-hint">Invert the entire B&amp;W palette — same composition, opposite voltage.</div>
+    </div>
+    <div class="tweak-group">
+      <div class="tweak-key">DEPTH · 3D_VOLUME</div>
+      <div class="tweak-radio" data-key="depth">
+        <button data-val="flat">FLAT</button>
+        <button data-val="shallow">SHALLOW</button>
+        <button data-val="deep">DEEP</button>
+      </div>
+      <div class="tweak-hint">Spatial volume of the network — flat plane, gentle parallax, or a turntable in space.</div>
+    </div>
+    <div class="tweak-group">
+      <div class="tweak-key">LAYOUT · GEOMETRY</div>
+      <div class="tweak-radio" data-key="layout">
+        <button data-val="linear">LINEAR</button>
+        <button data-val="stack">STACK</button>
+        <button data-val="radial">RADIAL</button>
+      </div>
+      <div class="tweak-hint">Arrangement of the seven layers in space.</div>
+    </div>
+    <div class="tweak-group">
+      <div class="tweak-key">DENSITY · EDGE_PRIOR</div>
+      <div class="tweak-radio" data-key="density">
+        <button data-val="sparse">SPARSE</button>
+        <button data-val="standard">STANDARD</button>
+        <button data-val="dense">DENSE</button>
+      </div>
+      <div class="tweak-hint">How thickly the layers are wired together — from quiet to humming.</div>
+    </div>
+    <div class="tweak-group">
+      <div class="tweak-key">SERIF · DISPLAY_VOICE</div>
+      <div class="tweak-radio" data-key="serif">
+        <button data-val="antique">ANTIQUE</button>
+        <button data-val="editorial">EDITORIAL</button>
+        <button data-val="literary">LITERARY</button>
+      </div>
+      <div class="tweak-hint">Display typeface for the headings — changes the entire register.</div>
+    </div>
+  </div>
+  <div class="tweaks-foot">
+    <span>NEURAL_CONSOLE</span>
+    <span>v0.4.2</span>
+  </div>
+</div>
+
+<!-- Re-opener pill when console is closed -->
+<button id="tweaks-open" class="tweaks-reopen" hidden>CONSOLE ⓘ</button>
+
+<!-- Overlay panel mount -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="panel" id="panel">
+    <header>
+      <div id="panel-id">[INPUT_01] INTRODUCTION</div>
+      <div class="meta">
+        <span id="panel-meta">NODE_ID: 000 · LAYER: 01</span>
+        <span class="tick">ESC TO CLOSE</span>
+      </div>
+      <button class="close" id="panel-close">CLOSE ✕</button>
+    </header>
+    <div class="body" id="panel-body"></div>
+    <footer>
+      <span>NEURAL_INSPECTOR &nbsp;//&nbsp; READ_ONLY</span>
+      <span id="panel-stamp">SIG: 0xA7F1·9C2D</span>
+    </footer>
+  </div>
+</div>
+
+<!-- Content data + everything else -->
+<script src="js/config.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/network.js" defer></script>
+<script src="js/panels.js" defer></script>
+<script src="js/rag.js" defer></script>
+<script src="js/console.js" defer></script>
+<script src="js/tour.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
