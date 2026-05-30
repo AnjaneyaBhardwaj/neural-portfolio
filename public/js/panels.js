@@ -150,6 +150,11 @@ function renderBio(){
       <li>Multi-agent orchestration is software architecture, not prompt engineering.</li>
       <li><em>Focus on your duties, not the results.</em> — Bhagavad Gita</li>
     </ul>
+    <div class="rule"></div>
+    <div class="label">// CURRENTLY_READING · GETTING_INSPIRED_FROM</div>
+    <ul style="padding-left:18px;margin:6px 0">
+      <li><em>If you can keep your head when all about you are losing theirs and blaming it on you, if you can trust yourself when all men doubt you, but make allowance for their doubting too.</em> — Rudyard Kipling, <em>If—</em></li>
+    </ul>
   </div>
   <div>
     <div class="label">// LONG_FORM</div>
