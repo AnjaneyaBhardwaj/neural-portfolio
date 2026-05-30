@@ -152,15 +152,9 @@ function renderBio(){
     </ul>
     <div class="rule"></div>
     <div class="label">// CURRENTLY_READING · GETTING_INSPIRED_FROM</div>
-    <blockquote style="margin:12px 0 4px;padding:0;border:0">
-      <p style="font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.35;margin:0;letter-spacing:.005em">
-        If you can keep your head when all about you<br/>
-        Are losing theirs and blaming it on you,<br/>
-        If you can trust yourself when all men doubt you,<br/>
-        But make allowance for their doubting too;
-      </p>
-      <footer style="margin-top:10px;font-size:9px;letter-spacing:.22em;text-transform:uppercase;opacity:.65">— Rudyard Kipling, <em>If—</em></footer>
-    </blockquote>
+    <ul style="padding-left:18px;margin:6px 0">
+      <li><em>If you can keep your head when all about you<br/>Are losing theirs and blaming it on you,<br/>If you can trust yourself when all men doubt you,<br/>But make allowance for their doubting too;</em> — Rudyard Kipling, <em>If—</em></li>
+    </ul>
   </div>
   <div>
     <div class="label">// LONG_FORM</div>
