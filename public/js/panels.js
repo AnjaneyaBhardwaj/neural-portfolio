@@ -240,7 +240,13 @@ ${CV_ROWS.map(r => `
 }
 
 function renderContact(){
-  const pair = (p) => `<div class="pair"><div class="k">${p.k}</div><div class="v">${p.v}</div></div>`;
+  const linkify = (k, v) => {
+    if(k === 'EMAIL')    return `<a href="mailto:${v}" target="_blank">${v}</a>`;
+    if(k === 'GITHUB')   return `<a href="https://${v}" target="_blank">${v}</a>`;
+    if(k === 'LINKEDIN') return `<a href="https://${v}" target="_blank">${v}</a>`;
+    return v;
+  };
+  const pair = (p) => `<div class="pair"><div class="k">${p.k}</div><div class="v">${linkify(p.k, p.v)}</div></div>`;
   return `
 <div class="label">// OUTPUT_LAYER · ACTIVATION_THRESHOLD = LOW</div>
 <h1 class="h-serif lg it">Send a signal.<br/>I usually respond within a day.</h1>
