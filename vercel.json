@@ -1,3 +1,6 @@
 {
-  "outputDirectory": "public"
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/resume", "destination": "/uploads/Bhardwaj_Anjaneya_Resume.pdf", "permanent": false }
+  ]
 }
