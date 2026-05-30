@@ -154,6 +154,7 @@ function renderBio(){
     <div class="label">// CURRENTLY_READING · GETTING_INSPIRED_FROM</div>
     <ul style="padding-left:18px;margin:6px 0">
       <li><em>If you can keep your head when all about you<br/>Are losing theirs and blaming it on you,<br/>If you can trust yourself when all men doubt you,<br/>But make allowance for their doubting too;</em> — Rudyard Kipling, <em>If—</em></li>
+      <li><em>Autobiography of a Yogi</em> — Paramhansa Yogananda</li>
     </ul>
   </div>
   <div>
