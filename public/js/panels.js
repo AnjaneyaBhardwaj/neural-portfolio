@@ -148,6 +148,7 @@ function renderBio(){
       <li>Rigorous evaluation beats benchmark theatrics.</li>
       <li>The best AI systems are the ones whose failure modes you can explain in plain language.</li>
       <li>Multi-agent orchestration is software architecture, not prompt engineering.</li>
+      <li><em>Focus on your duties, not the results.</em> — Bhagavad Gita</li>
     </ul>
   </div>
   <div>
